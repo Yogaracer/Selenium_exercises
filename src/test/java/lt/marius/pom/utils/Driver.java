@@ -20,7 +20,7 @@ public class Driver {
 //        options.addArguments("--remote-allow-origins=*");
         options.addArguments("start-maximized");
         options.addArguments("--force-device-scale-factor=0.7");
-        options.addArguments("--headless=new");
+//        options.addArguments("--headless=new");
 
         drivers.set(new ChromeDriver(options));
         drivers.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

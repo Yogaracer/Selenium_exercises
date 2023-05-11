@@ -1,6 +1,9 @@
 package lt.marius.pom.pages;
 
 import lt.marius.pom.utils.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class Common {
@@ -25,6 +28,23 @@ public class Common {
             Thread.currentThread().interrupt();
         }
     }
+
+    private static WebElement getElement(By locator) {
+        return Driver.getDriver().findElement(locator);
+    }
+
+
+    public static void clickOnElementByAction(By locator) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(getElement(locator)).
+                click().
+                build().
+                perform();
+
+    }
+
+
+
 }
 
 
